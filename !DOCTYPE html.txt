@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Aniversário</title>
+  <style>
+    /* Estilo geral */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #ffe6f0, #f3e5f5, #fffde7);
+      color: #4a2c2a;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 2.5em;
+      color: #d81b60;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255,255,255,0.8);
+      border-radius: 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease;
+    }
+
+    h2 {
+      color: #8e24aa;
+      margin-bottom: 20px;
+    }
+
+    p, li {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    /* Lista interativa */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      background: #f8bbd0;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    ul li:hover {
+      transform: scale(1.05);
+      background: #f48fb1;
+    }
+
+    /* Linha do tempo */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .timeline-item {
+      background: #e1bee7;
+      padding: 15px;
+      border-radius: 10px;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: "❤";
+      position: absolute;
+      left: -25px;
+      top: 10px;
+      color: #d81b60;
+    }
+
+    /* Galeria */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Player de música */
+    .music-player {
+      text-align: center;
+    }
+    audio {
+      width: 100%;
+      outline: none;
+    }
+
+    /* Corações flutuando */
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 10s infinite;
+      opacity: 0.6;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: 10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 1.3em;
+      color: #d81b60;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      header {
+        font-size: 2em;
+      }
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Corações flutuando -->
+  <div class="heart" style="left:10%; animation-delay:0s;"></div>
+  <div class="heart" style="left:30%; animation-delay:2s;"></div>
+  <div class="heart" style="left:50%; animation-delay:4s;"></div>
+  <div class="heart" style="left:70%; animation-delay:6s;"></div>
+  <div class="heart" style="left:90%; animation-delay:8s;"></div>
+
+  <!-- Cabeçalho -->
+  <header>
+    Feliz Aniversário, [Nome]!
+  </header>
+
+  <!-- Carta de amor -->
+  <section>
+    <h2>Minha Carta de Amor</h2>
+    <p>
+      Aqui você pode escrever sua mensagem especial para ela.  
+      Exemplo: "Desde o dia em que te conheci, minha vida se encheu de cores e alegria..."
+    </p>
+  </section>
+
+  <!-- Motivos -->
+  <section>
+    <h2>Motivos pelos quais eu te amo</h2>
+    <ul>
+      <li>Seu sorriso ilumina meu mundo</li>
+      <li>Você me apoia em todos os momentos</li>
+      <li>Seu abraço é meu lugar favorito</li>
+      <li>Você me inspira a ser melhor</li>
+      <li>Seu jeito único me encanta</li>
+    </ul>
+  </section>
+
+  <!-- Linha do tempo -->
+  <section>
+    <h2>Nossa História</h2>
+    <div class="timeline">
+      <div class="timeline-item">[Data] - Nosso primeiro encontro</div>
+      <div class="timeline-item">[Data] - Primeiro beijo</div>
+      <div class="timeline-item">[Data] - Viagem inesquecível</div>
+      <div class="timeline-item">[Data] - Outros momentos especiais</div>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section>
+    <h2>Nossas Fotos</h2>
+    <div class="gallery">
+      <img src="img1.jpg" alt="Foto 1">
+      <img src="img2.jpg" alt="Foto 2">
+      <img src="img3.jpg" alt="Foto 3">
+      <img src="img4.jpg" alt="Foto 4">
+      <img src="img5.jpg" alt="Foto 5">
+      <img src="img6.jpg" alt="Foto 6">
+    </div>
+  </section>
+
+  <!-- Música -->
+  <section class="music-player">
+    <h2>Nossa Música</h2>
+    <!-- Substitua "musica.mp3" pelo arquivo de áudio desejado -->
+    <audio controls>
+      <source src="musica.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+  </section>
+
+  <!-- Mensagem final -->
+  <footer>
+    Você torna todos os dias especiais. Te amo para sempre!
+  </footer>
+</body>
+</html>
